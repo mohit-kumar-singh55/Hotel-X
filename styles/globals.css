@@ -191,7 +191,7 @@ h6 {
 .defaultHero,
 .roomsHero {
   min-height: calc(100vh - 66px);
-  background: url("./images/defaultBcg.jpeg") center/cover no-repeat;
+  background: url("../public/images/defaultBcg.jpeg") center/cover no-repeat;
   /* background: #F2F6FC center/cover no-repeat; */
   display: flex;
   align-items: center;
@@ -199,7 +199,7 @@ h6 {
 }
 
 .roomsHero {
-  background-image: url("./images/room-2.jpeg");
+  background-image: url("../public/images/room-2.jpeg");
   min-height: 60vh;
 }
 
