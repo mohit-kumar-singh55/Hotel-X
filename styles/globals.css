@@ -34,6 +34,11 @@ body {
   line-height: 1.4;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 h1 {
   font-size: 3em;
   line-height: 1;
@@ -80,6 +85,7 @@ h6 {
   transition: var(--mainTransition);
   text-transform: uppercase;
   cursor: pointer;
+  font-weight: 600;
 }
 
 .btn-primary:hover {

@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Link from 'next/link';
+import Banner from '../components/Banner';
 import Hero from "../components/Hero";
 
 export default function Home() {
@@ -10,7 +12,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Hero />
+      <Hero>
+        <Banner title="Welcome to HotelX" subtitle="We are the best hotel in the world">
+          <button className="btn-primary" >
+            <Link href="/rooms" passHref>
+              Our Rooms
+            </Link>
+          </button>
+        </Banner>
+      </Hero>
 
     </div>
   )
