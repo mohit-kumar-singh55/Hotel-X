@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Banner from '../components/Banner';
 import Hero from "../components/Hero";
+import Services from '../components/Services';
 
 export default function Home() {
   return (
@@ -21,6 +22,8 @@ export default function Home() {
           </button>
         </Banner>
       </Hero>
+
+      <Services />
 
     </div>
   )
