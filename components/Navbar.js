@@ -16,7 +16,7 @@ function Navbar() {
             <div className="nav-center">
                 <div className="nav-header">
                     <Link href="/" passHref>
-                        <Image src={logo} alt="HotelX" />
+                        <Image src={logo} alt="HotelX" className='nav-btn' />
                     </Link>
                     <button className="nav-btn">
                         <FaAlignRight className="nav-icon" onClick={handleToogle} />
