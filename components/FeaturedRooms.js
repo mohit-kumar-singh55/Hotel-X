@@ -2,11 +2,12 @@ import React, { useContext } from 'react';
 import { RoomContext } from '../Context/context';
 
 function FeaturedRooms() {
-    const value = useContext(RoomContext);
+    const { featuredRooms: rooms } = useContext(RoomContext);
+    console.log(rooms);
 
     return (
         <div>
-            {value}
+
         </div>
     )
 }
