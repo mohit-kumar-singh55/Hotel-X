@@ -370,6 +370,7 @@ h6 {
 
 .img-container {
   position: relative;
+  height: 200px;
 }
 
 .img-container img {
