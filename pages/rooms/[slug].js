@@ -5,12 +5,12 @@ import Hero from "../../components/Hero";
 import Banner from "../../components/Banner";
 import Link from 'next/link';
 import { RoomContext } from "../../Context/context";
+import StyledHero from '../../components/StyledHero';
 
 function SingleRoom() {
     const router = useRouter();
 
     const { rooms } = useContext(RoomContext);
-    console.log(rooms);
     const room = rooms.find((item) => item.slug === router.query.slug); // find the room with the slug
 
     if (!room) {
@@ -27,9 +27,10 @@ function SingleRoom() {
     }
 
     const { name, description, capacity, size, price, extras, breakfast, pets, images } = room;
+    console.log(room);
 
     return (
-        <Hero className="roomsHero">
+        <StyledHero img={images[0]}>
             <Banner title={`${name} room`}>
                 <button className="btn-primary" >
                     <Link href="/rooms" passHref>
@@ -37,7 +38,7 @@ function SingleRoom() {
                     </Link>
                 </button>
             </Banner>
-        </Hero>
+        </StyledHero>
     );
 }
 
