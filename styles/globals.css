@@ -209,6 +209,7 @@ h6 {
 }
 
 .single-room-hero {
+  /* this we can change to min-height in order to make the images saperate */
   max-height: 60vh;
   background: center/cover no-repeat;
   display: flex;
