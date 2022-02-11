@@ -208,6 +208,18 @@ h6 {
   min-height: 60vh;
 }
 
+.single-room-hero {
+  max-height: 60vh;
+  background: center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-room-hero>span {
+  flex: 1;
+}
+
 /* End of Hero */
 /* Banner */
 .banner {
@@ -218,6 +230,7 @@ h6 {
   text-align: center;
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
+  position: absolute;
 }
 
 .banner h1 {

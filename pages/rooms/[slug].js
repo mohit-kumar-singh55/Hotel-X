@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react';
 import { useRouter } from 'next/router';
 import defaultBcg from "../../public/images/defaultBcg.jpeg";
-import Hero from "../../components/Hero";
 import Banner from "../../components/Banner";
 import Link from 'next/link';
 import { RoomContext } from "../../Context/context";
-import StyledHero from '../../components/StyledHero';
+import Image from 'next/image';
+import SingleRoomHero from '../../components/SingleRoomHero';
 
 function SingleRoom() {
     const router = useRouter();
@@ -30,15 +30,24 @@ function SingleRoom() {
     console.log(room);
 
     return (
-        <StyledHero img={images[0]}>
-            <Banner title={`${name} room`}>
-                <button className="btn-primary" >
-                    <Link href="/rooms" passHref>
-                        Back To Rooms
-                    </Link>
-                </button>
-            </Banner>
-        </StyledHero>
+        <>
+            <SingleRoomHero img={images[0]}>
+                <Banner title={`${name} room`}>
+                    <button className="btn-primary" >
+                        <Link href="/rooms" passHref>
+                            Back To Rooms
+                        </Link>
+                    </button>
+                </Banner>
+            </SingleRoomHero>
+            <section className="single-room">
+                <div className="single-room-images">
+                    {images.map((item, index) => (
+                        <Image src={item} alt={name} key={index} />
+                    ))}
+                </div>
+            </section>
+        </>
     );
 }
 
