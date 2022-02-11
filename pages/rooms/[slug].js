@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import { useRouter } from 'next/router';
-import defaultBcg from "../../public/images/defaultBcg.jpeg";
 import Banner from "../../components/Banner";
 import Link from 'next/link';
 import { RoomContext } from "../../Context/context";
@@ -29,9 +28,11 @@ function SingleRoom() {
     const { name, description, capacity, size, price, extras, breakfast, pets, images } = room;
     console.log(room);
 
+    const [mainImg, ...otherImg] = images;
+
     return (
         <>
-            <SingleRoomHero img={images[0]}>
+            <SingleRoomHero img={mainImg}>
                 <Banner title={`${name} room`}>
                     <button className="btn-primary" >
                         <Link href="/rooms" passHref>
@@ -42,10 +43,32 @@ function SingleRoom() {
             </SingleRoomHero>
             <section className="single-room">
                 <div className="single-room-images">
-                    {images.map((item, index) => (
+                    {otherImg.map((item, index) => (
                         <Image src={item} alt={name} key={index} />
                     ))}
                 </div>
+                <div className="single-room-info">
+                    <article className="desc">
+                        <h3>Details</h3>
+                        <p>{description}</p>
+                    </article>
+                    <article className="info">
+                        <h3>Info</h3>
+                        <h6>Price : ${price}</h6>
+                        <h6>Size : {size} SQFT</h6>
+                        <h6>Max Capacity : {capacity} {capacity > 1 ? "People" : "Person"}</h6>
+                        <h6>{pets ? "Pets allowed" : "No pet allowed"}</h6>
+                        <h6>{breakfast && "Free Breakfast Included"}</h6>
+                    </article>
+                </div>
+            </section>
+            <section className="room-extras">
+                <h6>Extras</h6>
+                <ul className='extras'>
+                    {extras.map((item, index) => (
+                        <li key={index}>- {item}</li>
+                    ))}
+                </ul>
             </section>
         </>
     );
