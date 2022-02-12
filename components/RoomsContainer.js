@@ -14,10 +14,10 @@ function RoomsContainer() {
     }
 
     return (
-        <div>
+        <>
             <RoomsFilter rooms={rooms} />
             <RoomsList rooms={sortedRooms} />
-        </div>
+        </>
     )
 }
 
