@@ -40,12 +40,18 @@ function RoomsFilter({ rooms }) {
                 {/* end of select type */}
                 {/* guest type */}
                 <div className="form-group">
-                    <label htmlFor="type">Guests</label>
+                    <label htmlFor="capacity">Guests</label>
                     <select name="capacity" id="capacity" value={capacity} className="form-control" onChange={handleChange}>
                         {people}
                     </select>
                 </div>
                 {/* end of guest type */}
+                {/* room Price */}
+                <div className="form-group">
+                    <label htmlFor="price">Room Price ${price}</label>
+                    <input type="range" name="price" id="price" max={maxPrice} min={minPrice} value={price} onChange={handleChange} className="form-control" />
+                </div>
+                {/* end of room Price */}
             </form>
         </section>
     )
